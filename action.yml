@@ -18,6 +18,7 @@ runs:
 #        cat $GITHUB_OUTPUT
 #
     - name: Run1
+      shell: bash
       run: |
         cat .github/workflows/myenvvars
         cat .github/workflows/myenvvars >> "$GITHUB_OUTPUT"      
