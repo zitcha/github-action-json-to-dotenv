@@ -17,9 +17,9 @@ jobs:
           input-json: '.github/workflows/test-1.json'
       - name: Show results
         run: |
-          echo "var1:"
-          echo "${{ steps.json-dotenv.outputs.var1 }}"
-          echo "var2:"
-          echo "${{ steps.json-dotenv.outputs.var2 }}"
+          echo "key1:"
+          echo "${{ steps.json-dotenv.outputs.key1 }}"
+          echo "key2:"
+          echo "${{ steps.json-dotenv.outputs.key2 }}"
 
                     
