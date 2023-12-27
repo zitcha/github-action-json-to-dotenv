@@ -13,4 +13,4 @@ runs:
     - name: JSON to DotEnv
       shell: bash
       run: |
-        cp ${{ inputs.input-json }} ${{ inputs.output-dotenv }}
+        cat ${{ inputs.input-json }} | jq -r  '. | to_entries | map("\(.key)=\(.value)") | .[]' > ${{ inputs.output-dotenv }}

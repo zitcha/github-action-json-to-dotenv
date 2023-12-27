@@ -5,7 +5,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: A job to test action
+    name: Automated test action
     steps:
       - name: Checkout
         uses: actions/checkout@v3
