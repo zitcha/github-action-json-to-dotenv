@@ -24,6 +24,7 @@ jobs:
 #          echo "${{ steps.json-dotenv.outputs.key2 }}"
 
       - name: Run2
+        shell: bash
         id: run2
         run: |
           echo "${{ steps.abc.outputs.VAR1 }}"
