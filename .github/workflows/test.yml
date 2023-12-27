@@ -12,9 +12,12 @@ jobs:
 
       - name: JSON to DotEnv
         uses: the-pistol/github-action-json-to-dotenv@master
+        id: json-dotenv
         with:
           input-json: '.github/workflows/test-1.json'
-          output-dotenv: '.github/workflows/test-dotevn'
-      - name: Show output
+      - name: Show results
         run: |
-          cat .github/workflows/test-dotevn
+          echo "var1:"
+          echo  ${{ steps.json-dotenv.outputs.var1 }}
+          echo "var2:"
+          echo  ${{ steps.json-dotenv.outputs.var2 }}
