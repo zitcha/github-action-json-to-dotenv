@@ -11,8 +11,10 @@ runs:
     - name: JSON to DotEnv
       shell: bash
       run: |
+        cat ${{ inputs.input-json }}
         cat ${{ inputs.input-json }} | jq -r  '. | to_entries | map("\(.key)=\(.value)") | .[]' >> "$GITHUB_OUTPUT"
         echo "echo output"
         echo $GITHUB_OUTPUT
         echo "cat output"
         cat $GITHUB_OUTPUT
+        
