@@ -12,19 +12,22 @@ jobs:
 
       - name: JSON to DotEnv
         uses: the-pistol/github-action-json-to-dotenv@master
-        id: abc
         with:
           input-json: '.github/workflows/test-1.json'
-          output-dotenv: '.github/workflows/dotenv'
+          output-dotenv: '.github/workflows/.env'
 
       - name: dump generated DotEnv file
         shell: bash
         run: |
           cat .github/workflows/dotenv      
 
-      - name: Parse/use generated DotEnv file
+      - name: Load dotenv file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: .github/workflows
+
+      - name: Use vars
         shell: bash
         run: |
-          source .github/workflows/dotenv
-          echo "var1:"
-          echo $var1
+          echo "${{ env.var1 }}"    
+          
