@@ -19,7 +19,8 @@ jobs:
       - name: dump generated DotEnv file
         shell: bash
         run: |
-          cat .github/workflows/dotenv      
+          cat .github/workflows/.env      
+          source .github/workflows/.env      
 
       - name: Load dotenv file
         uses: xom9ikk/dotenv@v2
