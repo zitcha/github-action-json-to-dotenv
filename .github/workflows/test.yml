@@ -17,7 +17,14 @@ jobs:
           input-json: '.github/workflows/test-1.json'
           output-dotenv: '.github/workflows/dotenv'
 
-      - name: Show result
+      - name: dump generated DotEnv file
         shell: bash
         run: |
-          cat .github/workflows/dotenv
+          cat .github/workflows/dotenv      
+
+      - name: Parse/use generated DotEnv file
+        shell: bash
+        run: |
+          source .github/workflows/dotenv
+          echo "var1:"
+          echo $var1
