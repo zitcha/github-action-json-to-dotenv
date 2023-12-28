@@ -4,14 +4,5 @@ Custom Github Actions must be in a public repository (Except when using Github E
 
 ### Github Action - JSON file to DotEnv file
 
-TODO
-
-#### Example
-
-```yaml
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-TODO
-```
+Provide the path to a JSON file which should contain a single object. The equivalent DotEnv file will be generated
+at the specified output path. See `.github/workflows/test.yml`
