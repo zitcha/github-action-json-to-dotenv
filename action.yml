@@ -4,22 +4,13 @@ author: Sam Anthony
 inputs:
   input-json:
     required: true
+  output-dotenv:
+    required: true
 
 runs:
   using: "composite"
   steps:
-#    - name: JSON to DotEnv
-#      shell: bash
-#      run: |
-#        cat ${{ inputs.input-json }} | jq -r  '. | to_entries | map("\(.key)=\(.value)") | .[]' >> "$GITHUB_OUTPUT"
-#        echo "echo output"
-#        echo $GITHUB_OUTPUT
-#        echo "cat output"
-#        cat $GITHUB_OUTPUT
-#
-    - name: Run1
+    - name: JSON to DotEnv
       shell: bash
       run: |
-        cat .github/workflows/myenvvars
-        cat .github/workflows/myenvvars >> "$GITHUB_OUTPUT"      
-
+        cat ${{ inputs.input-json }} | jq -r  '. | to_entries | map("\(.key)=\(.value)") | .[]' >> ${{ inputs.output-dotenv }}

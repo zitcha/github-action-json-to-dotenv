@@ -15,17 +15,9 @@ jobs:
         id: abc
         with:
           input-json: '.github/workflows/test-1.json'
+          output-dotenv: '.github/workflows/dotenv'
 
-#      - name: Show results
-#        run: |
-#          echo "key1:"
-#          echo "${{ steps.json-dotenv.outputs.key1 }}"
-#          echo "key2:"
-#          echo "${{ steps.json-dotenv.outputs.key2 }}"
-
-      - name: Run2
+      - name: Show result
         shell: bash
-        id: run2
         run: |
-          echo "${{ steps.abc.outputs.VAR1 }}"
-          echo "${{ steps.abc.outputs.VAR2 }}"
+          cat .github/workflows/dotenv
