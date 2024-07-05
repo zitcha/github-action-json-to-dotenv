@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: JSON to DotEnv
-        uses: the-pistol/github-action-json-to-dotenv@master
+        uses: zitcha/github-action-json-to-dotenv@master
         with:
           input-json: '.github/workflows/test-1.json'
           output-dotenv: '.github/workflows/.env'
